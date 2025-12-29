@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(poetry install:*)",
+      "Bash(poetry run pytest:*)",
+      "Bash(cat:*)",
+      "Bash(poetry run python:*)"
+    ]
+  }
+}
