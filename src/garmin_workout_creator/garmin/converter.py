@@ -59,7 +59,6 @@ class WorkoutConverter:
             StepType.COOLDOWN: self.STEP_TYPE_COOLDOWN,
             StepType.INTERVAL: self.STEP_TYPE_INTERVAL,
             StepType.RECOVERY: self.STEP_TYPE_RECOVERY,
-            StepType.REST: self.STEP_TYPE_REST,
             StepType.REPEAT: self.STEP_TYPE_REPEAT,
         }
 

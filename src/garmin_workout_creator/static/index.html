@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garmin Workout Creator</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Garmin Workout Creator</h1>
+            <p class="subtitle">Create workouts with natural language and sync to Garmin Connect</p>
+        </header>
+
+        <main>
+            <!-- Workout Input Section -->
+            <section class="card">
+                <h2>Describe Your Workout</h2>
+                <p class="help-text">
+                    Examples: "1km warmup @ 5:30, 3x 1km @ 4:45 + 2min rest, 1km cooldown" or "5min @ 165 bpm, cooldown"
+                </p>
+                <textarea
+                    id="workoutInput"
+                    placeholder="Enter your workout description here..."
+                    rows="4"
+                ></textarea>
+                <button id="parseBtn" class="btn btn-primary">Parse Workout</button>
+            </section>
+
+            <!-- Parsed Workout Preview -->
+            <section id="previewSection" class="card hidden">
+                <h2>Workout Preview</h2>
+                <div id="workoutPreview" class="workout-preview"></div>
+            </section>
+
+            <!-- Metadata Form -->
+            <section id="metadataSection" class="card hidden">
+                <h2>Workout Details</h2>
+                <form id="metadataForm">
+                    <div class="form-group">
+                        <label for="workoutName">Workout Name</label>
+                        <input
+                            type="text"
+                            id="workoutName"
+                            value="Untitled Workout"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="scheduledDate">Scheduled Date (optional)</label>
+                        <input type="date" id="scheduledDate">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Notes (optional)</label>
+                        <textarea id="notes" rows="3"></textarea>
+                    </div>
+
+                    <h3>Garmin Connect Credentials</h3>
+                    <p class="help-text">
+                        Enter your credentials or set GARMIN_EMAIL and GARMIN_PASSWORD environment variables
+                    </p>
+
+                    <div class="form-group">
+                        <label for="garminEmail">Email</label>
+                        <input type="email" id="garminEmail" autocomplete="username">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="garminPassword">Password</label>
+                        <input type="password" id="garminPassword" autocomplete="current-password">
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Upload to Garmin Connect</button>
+                </form>
+            </section>
+
+            <!-- Status Messages -->
+            <div id="statusMessage" class="hidden"></div>
+        </main>
+
+        <footer>
+            <p>
+                <a href="/docs" target="_blank">API Documentation</a> |
+                <a href="https://github.com/yourusername/garmin-workout-creator" target="_blank">GitHub</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
